@@ -14,8 +14,8 @@ public interface RegisteredUserDto {
 
     public void setPassword(String password);
 
-    public int getAge();
+    public String getAge();
 
-    public void setAge(int age);
+    public void setAge(String age);
 
 }

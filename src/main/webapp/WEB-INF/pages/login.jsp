@@ -6,10 +6,10 @@
 </head>
 <body>
 <h1>Online Chat</h1>
-    <form action="login/process" method="POST">
-        <input type="text" placeholder="Login">
-        <input type="text" placeholder="Password">
-        <input type="button" value="Enter">
+    <form action="login/process" method="post">
+        <input type="text" name="login" placeholder="Login"/>
+        <input type="text" name="password" placeholder="Password"/>
+        <button>Enter</button>
     </form>
     <form action="registration" method="get">
             <button>dont have an account?</button>

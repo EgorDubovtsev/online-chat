@@ -4,7 +4,17 @@ public class RegisteredUserImpl implements RegisteredUserDto {
     private String name;
     private String login;
     private String password;
-    private int age;
+    private String age;
+
+    @Override
+    public String toString() {
+        return "RegisteredUserImpl{" +
+                "name='" + name + '\'' +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", age=" + age +
+                '}';
+    }
 
     public String getName() {
         return name;
@@ -30,11 +40,11 @@ public class RegisteredUserImpl implements RegisteredUserDto {
         this.password = password;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 }

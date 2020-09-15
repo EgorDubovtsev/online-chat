@@ -33,27 +33,27 @@ public class AuthorizationController {
 
     @GetMapping("/registration")
     public String registration(Model model, @RequestParam(required = false) String error) {
-        if (!model.containsAttribute("registrationForm")){
-            model.addAttribute("registrationForm",new RegisteredUserImpl());
+        if (!model.containsAttribute("registrationForm")) {
+            model.addAttribute("registrationForm", new RegisteredUserImpl());
         }
         return "registration";
     }
 
     @PostMapping("/registration/process")
-    public String registrationProcess(@Valid @ModelAttribute("registrationForm") RegisteredUserDto registeredUser,
+    public String registrationProcess(@Valid @ModelAttribute("registrationForm") RegisteredUserImpl registeredUser,
                                       BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
+            System.out.println("err");
             return "redirect:/registration";
+
         }
         AuthorizedUser authorizedUser = new AuthorizedUser();
-
         authorizedUser.setRole(Role.USER);
         authorizedUser.setName(registeredUser.getName());
         authorizedUser.setPassword(passwordEncoder.encode(registeredUser.getPassword()));
         authorizedUser.setLogin(registeredUser.getLogin());
-        authorizedUser.setAge(registeredUser.getAge());
+        authorizedUser.setAge(Integer.parseInt(registeredUser.getAge()));
         authorizedUser.setStatus(Status.OFFLINE);
-
         userRepository.addAuthorizedUser(authorizedUser);
 
         return "redirect:/login";
