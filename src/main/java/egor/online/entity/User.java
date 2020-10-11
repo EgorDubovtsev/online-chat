@@ -1,5 +1,8 @@
 package egor.online.entity;
 
+import egor.online.utils.Role;
+import egor.online.utils.Status;
+
 public interface User {
     public String getName();
 

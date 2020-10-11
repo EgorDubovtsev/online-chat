@@ -1,6 +1,7 @@
 package egor.online.entity;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
+import egor.online.utils.Role;
+import egor.online.utils.Status;
 
 public class AuthorizedUser {
     private String name;

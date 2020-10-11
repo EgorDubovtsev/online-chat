@@ -1,0 +1,34 @@
+
+.loginForm{
+	height: 300px;
+	width: 350px;
+}
+.loginHeader{
+	margin-top: 0px;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+
+.field{
+	width: 250px;
+	height: 30px;
+	margin-bottom: 35px;
+}
+
+.loginBtn{
+		width: 250px;
+	height: 45px;
+	border-radius: 20px;
+	background: linear-gradient(47deg, rgba(232,177,8,1) 0%, rgba(253,77,29,1) 50%, rgba(138,26,236,1) 100%);
+}
+.loginBtn:hover{
+	transition: all 5s ease-out;
+	background: linear-gradient(47deg, rgba(232,177,8,1) 0%, rgba(253,77,29,1) 30%, rgba(138,26,236,1) 100%);
+}
+.bodyWrapper{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 700px;
+	align-items: center;
+}

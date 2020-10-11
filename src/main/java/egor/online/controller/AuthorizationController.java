@@ -1,10 +1,9 @@
 package egor.online.controller;
 
-import egor.online.dto.RegisteredUserDto;
 import egor.online.dto.RegisteredUserImpl;
 import egor.online.entity.AuthorizedUser;
-import egor.online.entity.Role;
-import egor.online.entity.Status;
+import egor.online.utils.Role;
+import egor.online.utils.Status;
 import egor.online.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
