@@ -15,7 +15,8 @@
 		<div class="background">
 			<h1 class="header">Online Chat</h1>
 			<div class="bodyWrapper">
-				<form:form action="registration/process" method="post" modelAttribute="registrationForm" class="form registrationForm">
+			<div class="formArc registrationForm">
+				<form:form action="registration/process" method="post" modelAttribute="registrationForm" class="formArc registrationForm">
 					<div class="loginHeader">Enter data for registration</div>
 					<form:input type="text" path="name" name="name" placeholder="Name" class="field"/>
 					<form:input type="text" path="age" name="age" placeholder="Age" class="field"/>
@@ -23,6 +24,10 @@
 					<form:input type="password" path="password" name="password" placeholder="password" class="field"/>
 					<button class="btn loginBtn">Enter</button>
 				</form:form>
+				<form action="login">
+                    <button class="subBtn">Already have account?</button>
+                </form>
+				</div>
 			</div>
 		</div>
 	</body>

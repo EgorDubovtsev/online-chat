@@ -2,9 +2,11 @@
 <html>
 <head>
 	<title>Online Chat</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/select.css">
 		<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+			<style>
+        	<%@include file="../../css/main.css"%>
+        	<%@include file="../../css/select.css"%>
+        	</style>
 </head>
 <body>
 	<div class="background">

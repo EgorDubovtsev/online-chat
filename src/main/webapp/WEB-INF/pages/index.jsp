@@ -3,9 +3,11 @@
 <html>
 <head>
 	<title>Chat</title>
-	<link rel="stylesheet" type="text/css" href="css/login.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+		<style>
+            <%@include file="../../resources/css/main.css"%>
+            <%@include file="../../resources/css/login.css"%>
+    	</style>
 </head>
 	<body>
 		<div class="background">

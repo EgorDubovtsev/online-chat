@@ -13,12 +13,17 @@
 		<div class="background">
 			<h1 class="header">Online Chat</h1>
 			<div class="bodyWrapper">
-				<form action="login/process" method="post" class="form loginForm">
-					<div class="loginHeader">Enter data for login</div>
-					<input type="text" name="login" placeholder="Login" class="field">
-					<input type="password" name="password" placeholder="Password" class="field">
-					<button class="btn loginBtn">Enter</button>
-				</form>
+				<div class="formArc loginForm">
+                    <form action="login/process" method="post" class="formArc loginForm">
+                        <div class="loginHeader">Enter data for login</div>
+                        <input type="text" name="login" placeholder="Login" class="field">
+                        <input type="password" name="password" placeholder="Password" class="field">
+                        <button class="btn loginBtn">Enter</button>
+                     </form>
+				    <form action="registration">
+               		    <button class="subBtn">First time here?</button>
+                    </form>
+				</div>
 			</div>
 		</div>
 	</body>
