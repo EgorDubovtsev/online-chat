@@ -3,7 +3,7 @@ package egor.online.entity;
 import egor.online.utils.Role;
 import egor.online.utils.Status;
 
-public class AuthorizedUser {
+public class AuthorizedUser implements User {
     private String name;
     private String login;
     private String password;

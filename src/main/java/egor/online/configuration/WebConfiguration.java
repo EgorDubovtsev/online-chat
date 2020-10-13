@@ -1,5 +1,6 @@
 package egor.online.configuration;
 
+import egor.online.dao.UserDaoImpl;
 import egor.online.repository.AuthorizedUserRepository;
 import egor.online.repository.UserRepository;
 import egor.online.service.UserDetailsServiceMapper;
@@ -16,5 +17,9 @@ public class WebConfiguration {
     @Bean
     public UserDetailsService userDetailsService(){
         return new UserDetailsServiceMapper();
+    }
+    @Bean
+    UserDaoImpl userDao(){
+        return new UserDaoImpl();
     }
 }
