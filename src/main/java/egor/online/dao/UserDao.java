@@ -4,6 +4,6 @@ import egor.online.entity.User;
 
 public interface UserDao {
     boolean saveUser(User user);
-    void getUserByLogin(String login);
+    User getUserByLogin(String login);
 
 }

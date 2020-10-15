@@ -1,5 +1,6 @@
 package egor.online.service;
 
+import egor.online.dao.UserDao;
 import egor.online.entity.AuthorizedUser;
 import egor.online.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,15 +19,14 @@ import java.util.Set;
 @Service
 public class UserDetailsServiceMapper implements UserDetailsService {
   @Autowired
-  UserRepository userRepository;
-
+  SimpleUserService userService;
   @Override
   public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
 
-    AuthorizedUser authorizedUserDto = userRepository.getUserByLogin(login);
+    AuthorizedUser authorizedUserDto = (AuthorizedUser) userService.getUserByLogin(login);//TODO: check append all fields
     Set<GrantedAuthority> roles = new HashSet<>();
     roles.add(new SimpleGrantedAuthority("User"));
-
+    System.out.println(authorizedUserDto.toString());
     return new User(
         authorizedUserDto.getLogin(),
         authorizedUserDto.getPassword(),

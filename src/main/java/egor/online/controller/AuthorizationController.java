@@ -1,5 +1,6 @@
 package egor.online.controller;
 
+import egor.online.dao.UserDao;
 import egor.online.dao.UserDaoImpl;
 import egor.online.dto.RegisteredUserImpl;
 import egor.online.entity.AuthorizedUser;
@@ -22,23 +23,17 @@ import javax.validation.Valid;
 @Controller
 public class AuthorizationController {
     @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    UserDaoImpl userDao;
+    private UserDao userDao;
     @Autowired
     private PasswordEncoder passwordEncoder;
 
     @GetMapping("/login")
     public String login(Model model, @RequestParam(required = false) String error) {
-        User user =  new AuthorizedUser();
-        user.setAge(2);
-        user.setLogin("esfs");
-        user.setPassword("dfdf");
-        user.setName("fsdf");
-
-
-        userDao.saveUser(user);
         return "login";
+    }
+    @GetMapping("/selectInterlocutor")
+    public String selectInterlocutor(Model model){
+        return "selectInterlocutor";
     }
 
     @GetMapping("/registration")
@@ -64,7 +59,7 @@ public class AuthorizationController {
         authorizedUser.setLogin(registeredUser.getLogin());
         authorizedUser.setAge(Integer.parseInt(registeredUser.getAge()));
         authorizedUser.setStatus(Status.OFFLINE);
-        userRepository.addAuthorizedUser(authorizedUser);
+        userDao.saveUser(authorizedUser);
 
         return "redirect:/login";
 

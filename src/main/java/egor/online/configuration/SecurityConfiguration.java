@@ -29,7 +29,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
                 .formLogin()
                 .loginPage("/login")
-                .defaultSuccessUrl("/")
+                .defaultSuccessUrl("/selectInterlocutor")
                 .loginProcessingUrl("/login/process")
                 .usernameParameter("login")
                 .passwordParameter("password")
