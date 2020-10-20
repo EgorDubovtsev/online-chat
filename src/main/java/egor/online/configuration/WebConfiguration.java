@@ -1,7 +1,10 @@
 package egor.online.configuration;
 
+import egor.online.dao.SearchDao;
+import egor.online.dao.SearchDaoImpl;
 import egor.online.dao.UserDaoImpl;
 import egor.online.mapper.AuthorizedUserMapper;
+import egor.online.mapper.InterlocutorMapper;
 import egor.online.repository.AuthorizedUserRepository;
 import egor.online.repository.UserRepository;
 import egor.online.service.*;
@@ -34,5 +37,13 @@ public class WebConfiguration {
     @Bean
     public SimpleSearchService searchService(){
         return new SearchService();
+    }
+    @Bean
+    public SearchDao searchDao(){
+        return new SearchDaoImpl();
+    }
+    @Bean
+    InterlocutorMapper interlocutorMapper(){
+        return new InterlocutorMapper();
     }
 }

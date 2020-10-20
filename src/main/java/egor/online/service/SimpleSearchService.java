@@ -3,6 +3,8 @@ package egor.online.service;
 import egor.online.dto.InterlocutorDto;
 import egor.online.entity.User;
 
+import java.util.List;
+
 public interface SimpleSearchService {
-    InterlocutorDto searchInterlocutor(String name);
+    List<InterlocutorDto> searchInterlocutor(String name);
 }

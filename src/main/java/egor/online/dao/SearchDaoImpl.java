@@ -1,11 +1,34 @@
 package egor.online.dao;
 
 import egor.online.dto.InterlocutorDto;
+import egor.online.mapper.InterlocutorMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCreator;
+
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.List;
 
 public class SearchDaoImpl implements SearchDao {
+    @Autowired
+    JdbcTemplate jdbcTemplate;
+    @Autowired
+    InterlocutorMapper interlocutorMapper;
+    @Autowired
+    DataSource dataSource;
+
     @Override
-    public InterlocutorDto getMatchedUsers(String name) {
-        String getMatchedUsersSql="SELECT login, personal_name from personal_data where login like '%?%' or personal_name like '%?%'";
-        //todo: add mapper for interlocutor dto
+    public List<InterlocutorDto> getMatchedUsers(String name) {
+        String getMatchedUsersSql = "SELECT login, personal_name from user_personal_data where login like '%" + name + "%' or personal_name like '%" + name + "%'";
+        try {
+
+            return jdbcTemplate.query(getMatchedUsersSql, interlocutorMapper);
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+        return null;
     }
 }

@@ -2,16 +2,16 @@ package egor.online.service;
 
 import egor.online.dao.SearchDao;
 import egor.online.dto.InterlocutorDto;
-import egor.online.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 public class SearchService implements SimpleSearchService {
     @Autowired
     SearchDao searchDao;
 
     @Override
-    public InterlocutorDto searchInterlocutor(String name) {
-        searchDao
-        return null;
+    public List<InterlocutorDto> searchInterlocutor(String name) {
+        return searchDao.getMatchedUsers(name);
     }
 }
