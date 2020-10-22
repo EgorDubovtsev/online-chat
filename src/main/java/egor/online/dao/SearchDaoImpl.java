@@ -17,14 +17,10 @@ public class SearchDaoImpl implements SearchDao {
     JdbcTemplate jdbcTemplate;
     @Autowired
     InterlocutorMapper interlocutorMapper;
-    @Autowired
-    DataSource dataSource;
-
     @Override
     public List<InterlocutorDto> getMatchedUsers(String name) {
         String getMatchedUsersSql = "SELECT login, personal_name from user_personal_data where login like '%" + name + "%' or personal_name like '%" + name + "%'";
         try {
-
             return jdbcTemplate.query(getMatchedUsersSql, interlocutorMapper);
         } catch (Exception exception) {
             exception.printStackTrace();

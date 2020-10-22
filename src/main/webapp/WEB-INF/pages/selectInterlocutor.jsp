@@ -19,13 +19,7 @@
 					<input type="text" id="searchLine" name="opponentName" class="opponentName" />
 					<button class="btn searchBtn" id="search">Search</button>
 				</div>
-				<form class="searchResults">
-					<button class="user">
-						<div class="userPhoto"></div>
-						<div class="userName">User Name</div>
-						<div class="userLogin">login123</div>
-					</button>
-				</form>
+				<div class="searchResults"></div>
 			</div>
 		</div>
 </div>

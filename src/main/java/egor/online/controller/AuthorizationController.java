@@ -31,12 +31,13 @@ public class AuthorizationController {
     public String login(Model model, @RequestParam(required = false) String error) {
         return "login";
     }
+
     @GetMapping("/selectInterlocutor")
-    public String selectInterlocutor(Model model){
+    public String selectInterlocutor(Model model) {
         return "selectInterlocutor";
     }
 
-    @GetMapping("/registration")
+    @GetMapping("/registration")//TODO: Add reserved login handling
     public String registration(Model model, @RequestParam(required = false) String error) {
         if (!model.containsAttribute("registrationForm")) {
             model.addAttribute("registrationForm", new RegisteredUserImpl());

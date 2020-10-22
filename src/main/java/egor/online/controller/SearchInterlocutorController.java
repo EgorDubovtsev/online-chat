@@ -22,10 +22,8 @@ public class SearchInterlocutorController {//TODO: add simple to impl, not to in
 
     @RequestMapping("/api/interlocutors")
     public @ResponseBody
-    String getInterlocutorsNames(@RequestParam String name){//TODO:Add object mapper
+    String getInterlocutorsNames(@RequestParam String name){
         List<InterlocutorDto> interlocutors = searchService.searchInterlocutor(name);
-        System.out.println("SEARCH "+interlocutors.get(0).getName());
-        System.out.println("SEARCH "+ interlocutors.get(1).getName());
         try{
             return objectMapper.writeValueAsString(interlocutors);
         } catch (JsonProcessingException e) {
