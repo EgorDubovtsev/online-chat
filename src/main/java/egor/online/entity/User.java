@@ -1,7 +1,6 @@
 package egor.online.entity;
 
 import egor.online.utils.Role;
-import egor.online.utils.Status;
 
 public interface User {
     public String getName();
@@ -19,10 +18,6 @@ public interface User {
     public Role getRole();
 
     public void setRole(Role role);
-
-    public Status getStatus();
-
-    public void setStatus(Status status);
 
     public int getAge();
 

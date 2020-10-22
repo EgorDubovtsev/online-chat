@@ -29,8 +29,11 @@ public class UserDaoImpl implements UserDao {
     @Override
     public User getUserByLogin(String login) {
         String getUserByLoginSql = "SELECT * FROM user_personal_data INNER JOIN user_login_data on user_personal_data.login=user_login_data.login where user_login_data.login=?";
-        User user = jdbcTemplate.queryForObject(getUserByLoginSql, userMapper, login);
-        System.out.println(user.getLogin()+" "+user.getPassword()+" " +user.getName());
-        return user;
+        try{
+            return jdbcTemplate.queryForObject(getUserByLoginSql, userMapper, login);
+        }catch (Exception ex){
+            ex.printStackTrace();
+            return null;
+        }
     }
 }

@@ -14,7 +14,7 @@
 			<h1 class="header">Online Chat</h1>
 			<div class="bodyWrapper">
 				<div class="form messageForm">
-				<div class="interlocuterName">Name</div>
+				<div class="interlocuterName">${Interlocutor.name} ${Interlocutor.age} y.o</div>
 				<div class="messageBox">
 					<div class="message">
 						<div class="messageAuthor">name</div>

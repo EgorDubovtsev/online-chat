@@ -1,13 +1,9 @@
 package egor.online.controller;
 
 import egor.online.dao.UserDao;
-import egor.online.dao.UserDaoImpl;
 import egor.online.dto.RegisteredUserImpl;
 import egor.online.entity.AuthorizedUser;
-import egor.online.entity.User;
 import egor.online.utils.Role;
-import egor.online.utils.Status;
-import egor.online.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -27,7 +23,7 @@ public class AuthorizationController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @GetMapping("/login")
+    @GetMapping("/login")//TODO: add status change after login and logout
     public String login(Model model, @RequestParam(required = false) String error) {
         return "login";
     }
@@ -59,7 +55,6 @@ public class AuthorizationController {
         authorizedUser.setPassword(passwordEncoder.encode(registeredUser.getPassword()));
         authorizedUser.setLogin(registeredUser.getLogin());
         authorizedUser.setAge(Integer.parseInt(registeredUser.getAge()));
-        authorizedUser.setStatus(Status.OFFLINE);
         userDao.saveUser(authorizedUser);
 
         return "redirect:/login";

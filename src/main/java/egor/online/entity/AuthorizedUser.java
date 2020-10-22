@@ -1,14 +1,12 @@
 package egor.online.entity;
 
 import egor.online.utils.Role;
-import egor.online.utils.Status;
 
 public class AuthorizedUser implements User {
     private String name;
     private String login;
     private String password;
     private Role role;
-    private Status status;
     private int age;
 
     public String getName() {
@@ -43,14 +41,6 @@ public class AuthorizedUser implements User {
         this.role = role;
     }
 
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
     public int getAge() {
         return age;
     }
@@ -66,7 +56,6 @@ public class AuthorizedUser implements User {
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 ", role=" + role +
-                ", status=" + status +
                 ", age=" + age +
                 '}';
     }
