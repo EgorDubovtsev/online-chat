@@ -1,10 +1,9 @@
 package egor.online.configuration;
 
-import egor.online.dao.SearchDao;
-import egor.online.dao.SearchDaoImpl;
-import egor.online.dao.UserDaoImpl;
+import egor.online.dao.*;
 import egor.online.mapper.AuthorizedUserMapper;
 import egor.online.mapper.InterlocutorMapper;
+import egor.online.mapper.MessageMapper;
 import egor.online.repository.AuthorizedUserRepository;
 import egor.online.repository.UserRepository;
 import egor.online.service.*;
@@ -45,5 +44,13 @@ public class WebConfiguration {
     @Bean
     InterlocutorMapper interlocutorMapper(){
         return new InterlocutorMapper();
+    }
+    @Bean
+    MessageMapper messageMapper(){
+        return new MessageMapper();
+    }
+    @Bean
+    MessagesDao messagesDao(){
+        return new MessagesDaoImpl();
     }
 }
