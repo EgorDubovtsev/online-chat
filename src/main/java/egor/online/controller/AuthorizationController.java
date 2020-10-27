@@ -4,7 +4,9 @@ import egor.online.dao.UserDao;
 import egor.online.dto.RegisteredUserImpl;
 import egor.online.entity.AuthorizedUser;
 import egor.online.utils.Role;
+import org.apache.tomcat.util.http.parser.Authorization;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +15,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import sun.net.www.protocol.http.AuthenticationInfo;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 @Controller
@@ -29,7 +34,9 @@ public class AuthorizationController {
     }
 
     @GetMapping("/selectInterlocutor")
-    public String selectInterlocutor(Model model) {
+    public String selectInterlocutor(Authentication authentication, Model model, HttpServletResponse response) {
+        response.addCookie(new Cookie("login",authentication.getName()));
+        System.out.println("LOGIN IN COOKIE = " + authentication.getName());
         return "selectInterlocutor";
     }
 

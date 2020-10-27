@@ -1,8 +1,8 @@
 package egor.online.dto;
 
 public class InterlocutorDto {
-    String name;
-    String login;
+    private String name;
+    private String login;
 
     public String getName() {
         return name;

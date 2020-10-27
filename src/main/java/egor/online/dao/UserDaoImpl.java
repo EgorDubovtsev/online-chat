@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserDaoImpl implements UserDao {
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
     @Autowired
-    AuthorizedUserMapper userMapper;
+    private AuthorizedUserMapper userMapper;
 
     @Override
     public boolean saveUser(User user) {

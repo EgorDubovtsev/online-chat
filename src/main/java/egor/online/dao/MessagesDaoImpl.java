@@ -9,9 +9,9 @@ import java.util.List;
 
 public class MessagesDaoImpl implements MessagesDao {
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
     @Autowired
-    MessageMapper messageMapper;
+    private MessageMapper messageMapper;
 
     @Override
     public List<MessageDto> getFiveLastMessages(String chatId) {

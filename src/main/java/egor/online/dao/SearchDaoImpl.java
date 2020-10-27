@@ -14,9 +14,9 @@ import java.util.List;
 
 public class SearchDaoImpl implements SearchDao {
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
     @Autowired
-    InterlocutorMapper interlocutorMapper;
+    private InterlocutorMapper interlocutorMapper;
     @Override
     public List<InterlocutorDto> getMatchedUsers(String name) {
         String getMatchedUsersSql = "SELECT login, personal_name from user_personal_data where login like '%" + name + "%' or personal_name like '%" + name + "%'";

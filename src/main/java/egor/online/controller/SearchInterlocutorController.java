@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 @Controller
-public class SearchInterlocutorController {//TODO: add simple to impl, not to interface
+public class SearchInterlocutorController {
     @Autowired
-    SimpleSearchService searchService;
+    private SimpleSearchService searchService;
     @Autowired
-    ObjectMapper objectMapper;
+    private ObjectMapper objectMapper;
 
     @RequestMapping("/api/interlocutors")
     public @ResponseBody

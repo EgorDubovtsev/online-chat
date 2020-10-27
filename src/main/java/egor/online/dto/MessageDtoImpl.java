@@ -1,11 +1,11 @@
 package egor.online.dto;
 
 public class MessageDtoImpl implements MessageDto {
-    int id;
-    int chatId;
-    String senderLogin;
-    String messageText;
-    String sendTime;
+    private int id;
+    private int chatId;
+    private String senderLogin;
+    private String messageText;
+    private String sendTime;
 
     public int getId() {
         return id;
