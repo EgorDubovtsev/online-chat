@@ -14,13 +14,14 @@ public class MessagesDaoImpl implements MessagesDao {
     private MessageMapper messageMapper;
 
     @Override
-    public List<MessageDto> getFiveLastMessages(String chatId) {
+    public List<MessageDto> getFiveLastMessages(int chatId) {
         String getFiveLastMessages = "SELECT * FROM messages where chatId=? order by message_id DESC limit 5";//TODO: CHECK EFFICIENCY
         return jdbcTemplate.query(getFiveLastMessages, messageMapper, chatId);//TODO: CHECK RETURN and maybe change searchDao
     }
 
     @Override
-    public List<MessageDto> getAllMessages(String chatId) {
-        return null;
+    public List<MessageDto> getAllMessages(int chatId) {
+        String getFiveLastMessages = "SELECT * FROM messages where chatId=? order by message_id DESC ";//TODO: CHECK EFFICIENCY
+        return jdbcTemplate.query(getFiveLastMessages, messageMapper, chatId);//TODO: CHECK RETURN and maybe change searchDao
     }
 }

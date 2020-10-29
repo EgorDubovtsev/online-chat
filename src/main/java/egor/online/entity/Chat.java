@@ -5,7 +5,7 @@ public class Chat {
     private String interlocutorLogin;
     private int chatId;
 
-    public String getUserLogin() {//TODO: add service to check what chat does not exist and create it and set id or set id from exist
+    public String getUserLogin() {
         return userLogin;
     }
 

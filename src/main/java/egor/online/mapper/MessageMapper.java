@@ -16,6 +16,6 @@ public class MessageMapper implements RowMapper<MessageDto> {//TODO: ADD CHAT ID
         message.setMessageText(resultSet.getString("message_text"));
         message.setSenderLogin(resultSet.getString("from_user"));
 //        message.setSendTime(resultSet); fixme
-        return null;
+        return message;
     }
 }

@@ -2,6 +2,7 @@ package egor.online.configuration;
 
 import egor.online.dao.*;
 import egor.online.mapper.AuthorizedUserMapper;
+import egor.online.mapper.ChatMapper;
 import egor.online.mapper.InterlocutorMapper;
 import egor.online.mapper.MessageMapper;
 import egor.online.repository.AuthorizedUserRepository;
@@ -52,5 +53,17 @@ public class WebConfiguration {
     @Bean
     MessagesDao messagesDao(){
         return new MessagesDaoImpl();
+    }
+    @Bean
+    ChatDao chatDao(){
+        return new ChatDaoImpl();
+    }
+    @Bean
+    ChatMapper chatMapper(){
+        return new ChatMapper();
+    }
+    @Bean
+    SimpleMessageService simpleMessageService(){
+        return new MessageService();
     }
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 	<title>Chat</title>
@@ -16,61 +17,13 @@
 				<div class="form messageForm">
 				<div class="interlocuterName">${Interlocutor.name} ${Interlocutor.age} y.o</div>
 				<div class="messageBox">
+				<c:forEach items="${Messages}" var="message">
 					<div class="message">
-						<div class="messageAuthor">name</div>
-						<div class="messageText">Extrimly stupid message example.</div>
+						<div class="messageAuthor">${message.getSenderLogin}</div>
+						<div class="messageText">${message.getMessageText}</div>
 						<div class="messageDate">12:02</div>
 					</div>
-					<div class="message">
-						<div class="messageAuthor">name</div>
-						<div class="messageText">Extrimly stupid message example.</div>
-						<div class="messageDate">12:02</div>
-					</div>
-					<div class="message">
-						<div class="messageAuthor">name</div>
-						<div class="messageText">Extrimly stupid message example.</div>
-						<div class="messageDate">12:02</div>
-					</div>
-					<div class="message">
-						<div class="messageAuthor">name</div>
-						<div class="messageText">Extrimly stupid message example.</div>
-						<div class="messageDate">12:02</div>
-					</div>
-					<div class="message">
-						<div class="messageAuthor">name</div>
-						<div class="messageText">Extrimly stupid message example.</div>
-						<div class="messageDate">12:02</div>
-					</div>
-					<div class="message">
-						<div class="messageAuthor">name</div>
-						<div class="messageText">Extrimly stupid message example.</div>
-						<div class="messageDate">12:02</div>
-					</div>
-					<div class="message">
-						<div class="messageAuthor">name</div>
-						<div class="messageText">Extrimly stupid message example.</div>
-						<div class="messageDate">12:02</div>
-					</div>
-					<div class="message">
-						<div class="messageAuthor">name</div>
-						<div class="messageText">Extrimly stupid message example.</div>
-						<div class="messageDate">12:02</div>
-					</div>
-					<div class="message">
-						<div class="messageAuthor">name</div>
-						<div class="messageText">Extrimly stupid message example.</div>
-						<div class="messageDate">12:02</div>
-					</div>
-					<div class="message">
-						<div class="messageAuthor">name</div>
-						<div class="messageText">Extrimly stupid message example.</div>
-						<div class="messageDate">12:02</div>
-					</div>
-					<div class="message">
-						<div class="messageAuthor">name</div>
-						<div class="messageText">Extrimly stupid message example.</div>
-						<div class="messageDate">12:02</div>
-					</div>
+				</c:forEach>
 				</div>
 				<form class="answerForm">
 					<input type="text" name="answer" placeholder="your message" class="answerField" />
