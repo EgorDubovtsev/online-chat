@@ -15,12 +15,12 @@
 			<h1 class="header">Online Chat</h1>
 			<div class="bodyWrapper">
 				<div class="form messageForm">
-				<div class="interlocuterName">${Interlocutor.name} ${Interlocutor.age} y.o</div>
+				<div class="interlocuterName">${Interlocutor.getName()} ${Interlocutor.getAge()} y.o</div>
 				<div class="messageBox">
 				<c:forEach items="${Messages}" var="message">
 					<div class="message">
-						<div class="messageAuthor">${message.getSenderLogin}</div>
-						<div class="messageText">${message.getMessageText}</div>
+						<div class="messageAuthor">${message.getSenderLogin()}</div>
+						<div class="messageText">${message.getMessageText()}</div>
 						<div class="messageDate">12:02</div>
 					</div>
 				</c:forEach>

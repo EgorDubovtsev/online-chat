@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS messages(
 	message_id SERIAL primary key,
 	chat_id integer references chats_id(chat_id),
 	from_user varchar(255) references user_personal_data(login),
-	message_text varchar(255) references user_personal_data(login),
+	message_text varchar(255),
 	send_time timestamp
 
 )
