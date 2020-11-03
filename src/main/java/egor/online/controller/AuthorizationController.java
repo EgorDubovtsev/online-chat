@@ -36,7 +36,6 @@ public class AuthorizationController {
     @GetMapping("/selectInterlocutor")
     public String selectInterlocutor(Authentication authentication, Model model, HttpServletResponse response) {
         response.addCookie(new Cookie("login",authentication.getName()));
-        System.out.println("LOGIN IN COOKIE = " + authentication.getName());
         return "selectInterlocutor";
     }
 

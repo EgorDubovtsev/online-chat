@@ -43,27 +43,27 @@ public class WebConfiguration {
         return new SearchDaoImpl();
     }
     @Bean
-    InterlocutorMapper interlocutorMapper(){
+    public InterlocutorMapper interlocutorMapper(){
         return new InterlocutorMapper();
     }
     @Bean
-    MessageMapper messageMapper(){
+    public MessageMapper messageMapper(){
         return new MessageMapper();
     }
     @Bean
-    MessagesDao messagesDao(){
+    public MessagesDao messagesDao(){
         return new MessagesDaoImpl();
     }
     @Bean
-    ChatDao chatDao(){
+    public ChatDao chatDao(){
         return new ChatDaoImpl();
     }
     @Bean
-    ChatMapper chatMapper(){
+    public ChatMapper chatMapper(){
         return new ChatMapper();
     }
     @Bean
-    SimpleMessageService simpleMessageService(){
+    public SimpleMessageService simpleMessageService(){
         return new MessageService();
     }
 }

@@ -31,10 +31,13 @@ public class IndexController {
             try {
                 messageService.createChat(authentication.getName(), interlocutorLogin);
                 chat = messageService.getChatEntity(authentication.getName(), interlocutorLogin);
+                messageService.setChatId(chat.getChatId());
             } catch (ChatCreatingException e) {
                 e.printStackTrace();
             }
+
         }
+        messageService.setChatId(chat.getChatId());
         model.addAttribute("Messages", messageService.getAllMessages(chat.getChatId()));
 
         return "index";

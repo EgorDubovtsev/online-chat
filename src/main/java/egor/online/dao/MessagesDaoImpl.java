@@ -15,13 +15,19 @@ public class MessagesDaoImpl implements MessagesDao {
 
     @Override
     public List<MessageDto> getFiveLastMessages(int chatId) {
-        String getFiveLastMessages = "SELECT * FROM messages where chat_id=? order by message_id DESC limit 5";
+        String getFiveLastMessages = "SELECT * FROM messages where chat_id=? limit 5";
         return jdbcTemplate.query(getFiveLastMessages, messageMapper, chatId);
     }
 
     @Override
     public List<MessageDto> getAllMessages(int chatId) {
-        String getFiveLastMessages = "SELECT * FROM messages where chat_id=? order by message_id DESC ";
+        String getFiveLastMessages = "SELECT * FROM messages where chat_id=?";
         return jdbcTemplate.query(getFiveLastMessages, messageMapper, chatId);
+    }
+
+    @Override
+    public void sendMessage(String userFrom, String messageText, int chatId) {
+        String sendMessageSql = "INSERT INTO messages (chat_id,from_user,message_text) values(?,?,?)";
+        jdbcTemplate.update(sendMessageSql,chatId,userFrom,messageText);
     }
 }

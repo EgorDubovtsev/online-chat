@@ -14,6 +14,7 @@ public class MessageService implements SimpleMessageService {
     private MessagesDao messagesDao;
     @Autowired
     private ChatDao chatDao;
+    private int chatId;
 
     @Override
     public List<MessageDto> getFiveLastMessages(int chatId) {
@@ -32,10 +33,24 @@ public class MessageService implements SimpleMessageService {
 
     @Override
     public void createChat(String firstLogin, String secondLogin) throws ChatCreatingException {
-        boolean isChatCreated = chatDao.createChat(firstLogin,secondLogin);
-        if (!isChatCreated){
+        boolean isChatCreated = chatDao.createChat(firstLogin, secondLogin);
+        if (!isChatCreated) {
             throw new ChatCreatingException("Chat cant be created");
         }
+    }
+
+    public int getChatId() {
+        return chatId;
+    }
+
+    public void setChatId(int chatId) {
+        this.chatId = chatId;
+    }
+
+
+    @Override
+    public void sendMessage(String userFrom, String messageText) {
+        messagesDao.sendMessage(userFrom,messageText,chatId);
     }
 
 
