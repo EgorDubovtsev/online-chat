@@ -21,8 +21,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.
                 authorizeRequests()
                 .antMatchers("/login").anonymous()
-                .antMatchers("/registration").permitAll()//TODO: add open access to resources packages
-                .antMatchers("/registration/**").permitAll()//TODO: add open access to resources packages
+                .antMatchers("/registration").permitAll()
+                .antMatchers("/registration/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .csrf().disable()

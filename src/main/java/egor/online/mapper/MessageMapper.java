@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class MessageMapper implements RowMapper<MessageDto> {//TODO: ADD CHAT ID CREATE
+public class MessageMapper implements RowMapper<MessageDto> {
     @Override
     public MessageDto mapRow(ResultSet resultSet, int i) throws SQLException {
         MessageDto message = new MessageDtoImpl();

@@ -15,6 +15,12 @@
 	<body>
 		<div class="background">
 			<h1 class="header">Online Chat</h1>
+                <form action="/logout" method="post">
+                    <button>Log out</button>
+                </form>
+                <form action="/selectInterlocutor" method="geta">
+                    <button>Select Interlocutor</button>
+                </form>
 			<div class="bodyWrapper">
 				<div class="form messageForm">
 				<div class="interlocuterName">${Interlocutor.getName()} ${Interlocutor.getAge()} y.o</div>

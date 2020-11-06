@@ -28,8 +28,13 @@ public class AuthorizationController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @GetMapping("/login")//TODO: add status change after login and logout
+    @GetMapping("/login")
     public String login(Model model, @RequestParam(required = false) String error) {
+        return "login";
+    }
+    @GetMapping("/logout")
+    public String logout(Model model){
+        model.addAttribute("registrationForm",null);
         return "login";
     }
 

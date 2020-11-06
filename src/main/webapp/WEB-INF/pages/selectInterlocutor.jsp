@@ -13,6 +13,9 @@
 <body>
 	<div class="background">
 		<h1 class="header">Online Chat</h1>
+		<form action="/logout" method="post">
+            <button>Log out</button>
+		</form>
 		<div class="bodyWrapper">
 			<div class="formArc searchFormArc">
 				<div class="searchForm">

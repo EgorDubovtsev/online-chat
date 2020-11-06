@@ -1,10 +1,11 @@
 $(document).ready(function (){
-        $("#send").click(()=>sendMessage());
+    let messageBody = document.querySelector('.messageBox');
+    messageBody.scrollTop = messageBody.scrollHeight - messageBody.clientHeight;
+    $("#send").click(()=>sendMessage());
 });
 function sendMessage(){
 const text = $("#messageField").val();//TODO: maybe return time
 let login = document.cookie.split('=')[1];
-alert(document.cookie);
 $.getJSON("/api/sendMessage",{
     userFrom:login,
     messageText:text
@@ -18,5 +19,5 @@ $.getJSON("/api/sendMessage",{
 '      	<div class="messageDate">12:02</div>'+
 '   </div>'
     );
-    $('#messageField').val("");//add insert into db
+    $('#messageField').val("");
 }
