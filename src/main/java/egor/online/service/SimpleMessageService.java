@@ -7,7 +7,7 @@ import egor.online.exceptions.ChatCreatingException;
 import java.util.List;
 
 public interface SimpleMessageService {
-    List<MessageDto> getFiveLastMessages(int chatId);
+    List<MessageDto> getNewMessages(String messageText);
 
     List<MessageDto> getAllMessages(int chatId);
 

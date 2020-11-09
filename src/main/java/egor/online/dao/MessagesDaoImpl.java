@@ -14,9 +14,9 @@ public class MessagesDaoImpl implements MessagesDao {
     private MessageMapper messageMapper;
 
     @Override
-    public List<MessageDto> getFiveLastMessages(int chatId) {
-        String getFiveLastMessages = "SELECT * FROM messages where chat_id=? limit 5";
-        return jdbcTemplate.query(getFiveLastMessages, messageMapper, chatId);
+    public List<MessageDto> getNewMessages(int chatId, String messageText) {
+        String getNewMessagesSql = "SELECT * FROM messages where chat_id=? and message_id > (SELECT max(message_id) FROM messages WHERE message_text = ?)";
+        return jdbcTemplate.query(getNewMessagesSql, messageMapper, chatId, messageText);
     }
 
     @Override
@@ -28,6 +28,6 @@ public class MessagesDaoImpl implements MessagesDao {
     @Override
     public void sendMessage(String userFrom, String messageText, int chatId) {
         String sendMessageSql = "INSERT INTO messages (chat_id,from_user,message_text) values(?,?,?)";
-        jdbcTemplate.update(sendMessageSql,chatId,userFrom,messageText);
+        jdbcTemplate.update(sendMessageSql, chatId, userFrom, messageText);
     }
 }

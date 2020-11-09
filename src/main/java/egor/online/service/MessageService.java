@@ -18,8 +18,8 @@ public class MessageService implements SimpleMessageService {
 
 
     @Override
-    public List<MessageDto> getFiveLastMessages(int chatId) {
-        return null;//ToDO: продумать систему подгрузки сообщений
+    public List<MessageDto> getNewMessages(String messageText) {
+        return messagesDao.getNewMessages(chatId,messageText);
     }
 
     @Override
