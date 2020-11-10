@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
 	<title>Login</title>
@@ -14,11 +15,14 @@
 			<h1 class="header">Online Chat</h1>
 			<div class="bodyWrapper">
 				<div class="formArc loginForm">
-                    <form action="login/process" method="post" class="formArc loginForm">
+                    <form action="login/process" method="post" modelAttribute="loginForm" class="formArc loginForm">
                         <div class="loginHeader">Enter data for login</div>
-                        <input type="text" name="login" placeholder="Login" class="field">
-                        <input type="password" name="password" placeholder="Password" class="field">
+                        <input type="text" name="login"  placeholder="Login" class="field"/>
+                        <input type="password" name="password"  placeholder="Password" class="field"/>
                         <button class="btn loginBtn">Enter</button>
+                        <div class="errorMessage">
+                            <span>${errorMessage}</span>
+                        </div>
                      </form>
 				    <form action="registration">
                		    <button class="subBtn">First time here?</button>

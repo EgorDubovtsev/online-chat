@@ -8,6 +8,7 @@ import egor.online.mapper.MessageMapper;
 import egor.online.repository.AuthorizedUserRepository;
 import egor.online.repository.UserRepository;
 import egor.online.service.*;
+import egor.online.utils.LoginStringConstants;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -65,5 +66,9 @@ public class WebConfiguration {
     @Bean
     public SimpleMessageService simpleMessageService(){
         return new MessageService();
+    }
+    @Bean
+    public SimpleFieldCheckerService simpleFieldCheckerService(){
+        return new FieldCheckerService();
     }
 }

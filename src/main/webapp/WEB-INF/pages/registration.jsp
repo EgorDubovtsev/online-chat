@@ -23,6 +23,9 @@
 					<form:input type="text" path="login" name="login" placeholder="Login" class="field"/>
 					<form:input type="password" path="password" name="password" placeholder="password" class="field"/>
 					<button class="btn loginBtn">Enter</button>
+					<div class="errorMessage">
+					    <span>${errorMessage}</span>
+					</div>
 				</form:form>
 				<form action="login">
                     <button class="subBtn">Already have account?</button>
