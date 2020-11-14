@@ -14,13 +14,19 @@
 </head>
 	<body>
 		<div class="background">
-			<h1 class="header">Online Chat</h1>
-                <form action="/logout" method="post">
-                    <button>Log out</button>
-                </form>
-                <form action="/selectInterlocutor" method="geta">
-                    <button>Select Interlocutor</button>
-                </form>
+			<div class="headerWrapper">
+				<h1 class="header">Online Chat</h1>
+				<div class="navWrapper">
+					<form action="/logout" method="post">
+                    	<button class="btn navBtn">Выйти</button>
+                	</form>
+	                <form action="/selectInterlocutor" method="geta">
+	                    <button class="btn navBtn">Выбрать собеседника</button>
+	                </form>
+
+				</div>
+			</div>
+                
 			<div class="bodyWrapper">
 				<div class="form messageForm">
 				<div class="interlocuterName">${Interlocutor.getName()} ${Interlocutor.getAge()} y.o</div>
@@ -34,7 +40,7 @@
 				</c:forEach>
 				</div>
 				<div class="answerForm">
-					<input type="text" name="answer" placeholder="your message" id="messageField" class="answerField" />
+					<input type="text" autocomplete="off" name="answer" placeholder="your message" id="messageField" class="answerField" />
 					<button id="send" class="btn sendBtn">Send</button>
 				</div>
 				</div>

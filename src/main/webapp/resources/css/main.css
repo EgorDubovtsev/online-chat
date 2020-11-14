@@ -5,7 +5,8 @@ body{
 	font-family: 'Nanum Gothic', sans-serif;
 }
 .background{
-	background: linear-gradient(47deg, rgba(232,177,8,1) 0%, rgba(253,77,29,1) 50%, rgba(138,26,236,1) 100%);
+	background: rgb(96,136,159);
+	background: linear-gradient(180deg, rgba(96,136,159,1) 0%, rgba(89,144,154,1) 37%, rgba(255,253,233,1) 100%);
 	 -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -34,19 +35,42 @@ body{
     border:0;
 }
 .message{
-	border: 1px solid black;
-	width: 80%;
+	width: 100%;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	min-height: 74px;
+	background: #baced5;
+	border-radius: 10px;
 	margin-bottom: 10px;
 }
 .messageForm{
-	width: 700px;
+	width: 45%;
 	height: 800px;
 	margin-top: 100px;
 }
+.navBtn{
+	background: #6facbd;
+	width: 200px;
+	border-radius: 10px;
+	height: 34px;
+	margin-right: 15px;
+	margin-top: 30px;
+}
 .header{
 	padding-left: 10%;
-	font-size: 2.1em;
+	color: transparent;
+    text-shadow: 0 0 4px #000;
+	font-size: 50px;
 	text-transform: uppercase;
+}
+.headerWrapper{
+	display: flex;
+	justify-content: space-between;
+}
+.navWrapper{
+	padding-right: 10%;
+	display: flex;
+	justify-content: space-between;
 }
 .messageText{
 	width: 80%;
@@ -54,9 +78,14 @@ body{
 }
 .interlocuterName{
 	text-align: center;
+	background: #e3e2d8;
+	border-radius: 10px;
 	padding: 10px;
+	box-shadow: -1px 6px 5px 0px #494949;
 	top:0;
-	height: 10%;
+	margin-bottom: 15px;
+	/*width: 762px;*/
+	height: 44px;
 }
 .messageBox{
 	margin: 1px;
@@ -69,15 +98,33 @@ body{
 	width: 100%;
 	overflow: auto;
 }
+.messageBox::-webkit-scrollbar {
+  display: none;
+}
+
 .answerForm{
+	margin-top: 15px;
 	width: 100%;
+	display: flex;
+	flex-direction: row;
 }
 .answerField{
-	margin-top: 30px;
-	width: 80%;
-	height: 30px;
+	background: #e5e5e2;
+	border-radius: 10px;
+	width: 100%;
+	height: 65px;
+	margin-right: 10px;
+	padding-left: 10px;
+	box-shadow: -1px 6px 5px 0px #494949;
+	font-size: 20px;
+}
+input,button{
+	outline: none;
 }
 .sendBtn{
-	height: 36px;
-	width: 100px;
+	height: 70px;
+	box-shadow: -1px 6px 5px 0px #494949;
+	width: 90px;
+	background: #baced5;
+	border-radius: 10px;
 }

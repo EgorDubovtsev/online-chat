@@ -18,10 +18,10 @@
 			<div class="formArc registrationForm">
 				<form:form action="registration/process" method="post" modelAttribute="registrationForm" class="formArc registrationForm">
 					<div class="loginHeader">Enter data for registration</div>
-					<form:input type="text" path="name" name="name" placeholder="Name" class="field"/>
-					<form:input type="text" path="age" name="age" placeholder="Age" class="field"/>
-					<form:input type="text" path="login" name="login" placeholder="Login" class="field"/>
-					<form:input type="password" path="password" name="password" placeholder="password" class="field"/>
+					<form:input type="text" path="name" autocomplete="off" name="name" placeholder="Name" class="field"/>
+					<form:input type="text" path="age" autocomplete="off" name="age" placeholder="Age" class="field"/>
+					<form:input type="text" path="login" autocomplete="off" name="login" placeholder="Login" class="field"/>
+					<form:input type="password" path="password"  name="password" placeholder="password" class="field"/>
 					<button class="btn loginBtn">Enter</button>
 					<div class="errorMessage">
 					    <span>${errorMessage}</span>

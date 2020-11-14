@@ -17,8 +17,8 @@
 				<div class="formArc loginForm">
                     <form action="login/process" method="post" modelAttribute="loginForm" class="formArc loginForm">
                         <div class="loginHeader">Enter data for login</div>
-                        <input type="text" name="login"  placeholder="Login" class="field"/>
-                        <input type="password" name="password"  placeholder="Password" class="field"/>
+                        <input type="text" autocomplete="off" name="login"  placeholder="Login" class="field"/>
+                        <input type="password" autocomplete="off" name="password"  placeholder="Password" class="field"/>
                         <button class="btn loginBtn">Enter</button>
                         <div class="errorMessage">
                             <span>${errorMessage}</span>
