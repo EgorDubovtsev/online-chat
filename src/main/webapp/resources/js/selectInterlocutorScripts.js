@@ -9,7 +9,7 @@ function searchInterlocutor(){
     },(response)=>{
         for(let i = 0;i<response.length;i++){
              $(".searchResults").append(
-                "<form action='/' class='user'>"+
+                "<form action='/'>"+
                     "<button class='user'>"+
                     "<div class='userPhoto'></div>"+
                         "<input type='hidden' name='interlocutorLogin' value='"+response[i].login+"'/>"+

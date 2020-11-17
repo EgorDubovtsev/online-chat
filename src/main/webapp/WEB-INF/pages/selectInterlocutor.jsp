@@ -24,8 +24,8 @@
 		<div class="bodyWrapper">
 			<div class="formArc searchFormArc">
 				<div class="searchForm">
-					<input type="text" id="searchLine" name="opponentName" class="opponentName" />
-					<button class="btn searchBtn" id="search">Search</button>
+					<input type="text" id="searchLine" name="opponentName" class="opponentName" placeholder="Имя или логин собеседника..." />
+					<button class="btn searchBtn" id="search">></button>
 				</div>
 				<div class="searchResults"></div>
 			</div>
