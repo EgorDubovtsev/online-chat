@@ -25,9 +25,9 @@ public class ChatDaoImpl implements ChatDao {
     @Override
     public boolean createChat(String firstLogin, String secondLogin) {
         String createChatSql = "INSERT INTO chats_id (first_user, second_user) values(?,?)";
-        try{
-            jdbcTemplate.update(createChatSql,firstLogin,secondLogin);
-        }catch (Exception e){
+        try {
+            jdbcTemplate.update(createChatSql, firstLogin, secondLogin);
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }

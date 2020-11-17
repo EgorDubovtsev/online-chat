@@ -16,16 +16,16 @@
 			<div class="bodyWrapper">
 				<div class="formArc loginForm">
                     <form action="login/process" method="post" modelAttribute="loginForm" class="formArc loginForm">
-                        <div class="loginHeader">Enter data for login</div>
-                        <input type="text" autocomplete="off" name="login"  placeholder="Login" class="field"/>
-                        <input type="password" autocomplete="off" name="password"  placeholder="Password" class="field"/>
-                        <button class="btn loginBtn">Enter</button>
+                        <div class="loginHeader">Введите данные для входа</div>
+                        <input type="text" autocomplete="off" name="login"  placeholder="Логин" class="field"/>
+                        <input type="password" autocomplete="off" name="password"  placeholder="Пароль" class="field"/>
+                        <button class="btn loginBtn">Войти</button>
                         <div class="errorMessage">
                             <span>${errorMessage}</span>
                         </div>
                      </form>
 				    <form action="registration">
-               		    <button class="subBtn">First time here?</button>
+               		    <button class="subBtn">Первый раз здесь?</button>
                     </form>
 				</div>
 			</div>

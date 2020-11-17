@@ -17,18 +17,18 @@
 			<div class="bodyWrapper">
 			<div class="formArc registrationForm">
 				<form:form action="registration/process" method="post" modelAttribute="registrationForm" class="formArc registrationForm">
-					<div class="loginHeader">Enter data for registration</div>
-					<form:input type="text" path="name" autocomplete="off" name="name" placeholder="Name" class="field"/>
-					<form:input type="text" path="age" autocomplete="off" name="age" placeholder="Age" class="field"/>
-					<form:input type="text" path="login" autocomplete="off" name="login" placeholder="Login" class="field"/>
-					<form:input type="password" path="password"  name="password" placeholder="password" class="field"/>
+					<div class="loginHeader">Введите данные для регистрации</div>
+					<form:input type="text" path="name" autocomplete="off" name="name" placeholder="Имя" class="field"/>
+					<form:input type="text" path="age" autocomplete="off" name="age" placeholder="Возраст" class="field"/>
+					<form:input type="text" path="login" autocomplete="off" name="login" placeholder="Логин" class="field"/>
+					<form:input type="password" path="password"  name="password" placeholder="Пароль" class="field"/>
 					<button class="btn loginBtn">Enter</button>
 					<div class="errorMessage">
 					    <span>${errorMessage}</span>
 					</div>
 				</form:form>
 				<form action="login">
-                    <button class="subBtn">Already have account?</button>
+                    <button class="subBtn">Уже есть аккаунт?</button>
                 </form>
 				</div>
 			</div>

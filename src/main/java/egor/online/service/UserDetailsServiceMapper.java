@@ -1,8 +1,6 @@
 package egor.online.service;
 
-import egor.online.dao.UserDao;
 import egor.online.entity.AuthorizedUser;
-import egor.online.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

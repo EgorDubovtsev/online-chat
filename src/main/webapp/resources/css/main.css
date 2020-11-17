@@ -18,12 +18,9 @@ body{
 }
 .btn{
 	font-family: 'Nanum Gothic', sans-serif;
-	border: 1px solid black;
+	margin-bottom: 10px;
 }
 .formArc{
-	background: #FCEEE3;
-	border: 1px solid black;
-	border-radius: 20px;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -32,6 +29,7 @@ body{
 }
 .subBtn{
     background:transparent;
+    font-size:16px;
     border:0;
 }
 .message{
@@ -81,7 +79,7 @@ body{
 	background: #e3e2d8;
 	border-radius: 10px;
 	padding: 10px;
-	box-shadow: -1px 6px 5px 0px #494949;
+	box-shadow: -1px 6px 5px 0px #787878;
 	top:0;
 	margin-bottom: 15px;
 	/*width: 762px;*/
@@ -115,7 +113,7 @@ body{
 	height: 65px;
 	margin-right: 10px;
 	padding-left: 10px;
-	box-shadow: -1px 6px 5px 0px #494949;
+	box-shadow: -1px 6px 5px 0px #787878;
 	font-size: 20px;
 }
 input,button{
@@ -123,7 +121,7 @@ input,button{
 }
 .sendBtn{
 	height: 70px;
-	box-shadow: -1px 6px 5px 0px #494949;
+	box-shadow: -1px 6px 5px 0px #787878;
 	width: 90px;
 	background: #baced5;
 	border-radius: 10px;

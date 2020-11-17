@@ -5,10 +5,7 @@ import egor.online.mapper.AuthorizedUserMapper;
 import egor.online.mapper.ChatMapper;
 import egor.online.mapper.InterlocutorMapper;
 import egor.online.mapper.MessageMapper;
-import egor.online.repository.AuthorizedUserRepository;
-import egor.online.repository.UserRepository;
 import egor.online.service.*;
-import egor.online.utils.LoginStringConstants;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -16,59 +13,67 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 @Configuration
 public class WebConfiguration {
     @Bean
-    public UserRepository userRepository(){
-        return new AuthorizedUserRepository();
-    }
-    @Bean
-    public UserDetailsService userDetailsService(){
+    public UserDetailsService userDetailsService() {
         return new UserDetailsServiceMapper();
     }
+
     @Bean
-    UserDaoImpl userDao(){
+    UserDaoImpl userDao() {
         return new UserDaoImpl();
     }
+
     @Bean
-    public AuthorizedUserMapper userMapper(){
+    public AuthorizedUserMapper userMapper() {
         return new AuthorizedUserMapper();
     }
+
     @Bean
-    public SimpleUserService simpleUserService(){
+    public SimpleUserService simpleUserService() {
         return new UserService();
     }
+
     @Bean
-    public SimpleSearchService searchService(){
+    public SimpleSearchService searchService() {
         return new SearchService();
     }
+
     @Bean
-    public SearchDao searchDao(){
+    public SearchDao searchDao() {
         return new SearchDaoImpl();
     }
+
     @Bean
-    public InterlocutorMapper interlocutorMapper(){
+    public InterlocutorMapper interlocutorMapper() {
         return new InterlocutorMapper();
     }
+
     @Bean
-    public MessageMapper messageMapper(){
+    public MessageMapper messageMapper() {
         return new MessageMapper();
     }
+
     @Bean
-    public MessagesDao messagesDao(){
+    public MessagesDao messagesDao() {
         return new MessagesDaoImpl();
     }
+
     @Bean
-    public ChatDao chatDao(){
+    public ChatDao chatDao() {
         return new ChatDaoImpl();
     }
+
     @Bean
-    public ChatMapper chatMapper(){
+    public ChatMapper chatMapper() {
         return new ChatMapper();
     }
+
     @Bean
-    public SimpleMessageService simpleMessageService(){
+    public SimpleMessageService simpleMessageService() {
         return new MessageService();
     }
+
     @Bean
-    public SimpleFieldCheckerService simpleFieldCheckerService(){
+    public SimpleFieldCheckerService simpleFieldCheckerService() {
         return new FieldCheckerService();
     }
 }
