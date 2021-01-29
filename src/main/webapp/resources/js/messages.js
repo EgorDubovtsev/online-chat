@@ -8,7 +8,8 @@ $(document).ready(function (){
 });
 function sendMessage(){
 const text = $("#messageField").val();
-let login = document.cookie.split('=')[1];
+let login = document.cookie.split('login=')[1];
+console.log(document.cookie);
 $.getJSON("/api/sendMessage",{
     userFrom:login,
     messageText:text
