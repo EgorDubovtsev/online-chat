@@ -5,6 +5,8 @@ import egor.online.mapper.MessageMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.List;
 
 public class MessagesDaoImpl implements MessagesDao {
@@ -27,7 +29,8 @@ public class MessagesDaoImpl implements MessagesDao {
 
     @Override
     public void sendMessage(String userFrom, String messageText, int chatId) {
-        String sendMessageSql = "INSERT INTO messages (chat_id,from_user,message_text) values(?,?,?)";
-        jdbcTemplate.update(sendMessageSql, chatId, userFrom, messageText);
+        String sendMessageSql = "INSERT INTO messages (chat_id,from_user,message_text,send_time) values(?,?,?,?)";
+        Timestamp currentTime= new Timestamp(System.currentTimeMillis());
+        jdbcTemplate.update(sendMessageSql, chatId, userFrom, messageText,currentTime);
     }
 }

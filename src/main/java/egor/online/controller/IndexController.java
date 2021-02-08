@@ -42,6 +42,6 @@ public class IndexController {
 
         return "index";
 
-    }//TODO: refactor style
+    }
 
 }

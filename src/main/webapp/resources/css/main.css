@@ -41,6 +41,9 @@ body{
 	border-radius: 10px;
 	margin-bottom: 10px;
 }
+.messageAuthor{
+    padding-left:10px;
+}
 .messageForm{
 	width: 45%;
 	height: 800px;

@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 	<title>Online Chat</title>
+	<c:set var="staticRoot" value="${pageContext.request.contextPath}/resources"/>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="../../resources/js/selectInterlocutorScripts.js"></script>
 		<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
 			<style>
 	        	<%@include file="../../resources/css/main.css"%>
 	        	<%@include file="../../resources/css/select.css"%>
+                .userPhoto{
+                    height: 50px;
+                    width: 50px;
+                    background-image:url(${staticRoot}/img/user.png);
+                }
         	</style>
 </head>
 <body>

@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 
 public class MessageMapper implements RowMapper<MessageDto> {
     @Override
@@ -15,7 +16,10 @@ public class MessageMapper implements RowMapper<MessageDto> {
         message.setChatId(resultSet.getInt("chat_id"));
         message.setMessageText(resultSet.getString("message_text"));
         message.setSenderLogin(resultSet.getString("from_user"));
-//        message.setSendTime(resultSet); fixme
+        Timestamp timestamp = resultSet.getTimestamp("send_time");
+        if (timestamp!=null){
+            message.setSendTime(timestamp.toLocalDateTime().getHour()+":"+timestamp.toLocalDateTime().getMinute());
+        }
         return message;
     }
 }

@@ -14,17 +14,17 @@ $.getJSON("/api/sendMessage",{
     userFrom:login,
     messageText:text
 },(response)=>{
-
-})
+    let date = new Date();
     $(".messageBox").append(
     '<div class="message">'+
 '      	<div class="messageAuthor">'+login+'</div>'+
 '      	<div class="messageText">'+text+'</div>'+
-'      	<div class="messageDate">12:02</div>'+
+'      	<div class="messageDate">'+date.getHours()+":"+date.getMinutes()+'</div>'+
 '   </div>'
     );
     $('#messageField').val("");
     scrollDown();
+})
 }
 function loadMessages(){
     let lastMessage = $(".messageText:last").text();
@@ -38,7 +38,7 @@ function loadMessages(){
                     '<div class="message">'+
                 '      	<div class="messageAuthor">'+response[i].senderLogin+'</div>'+
                 '      	<div class="messageText">'+response[i].messageText+'</div>'+
-                '      	<div class="messageDate">12:02</div>'+
+                '      	<div class="messageDate">'+response[i].sentTime+'</div>'+
                 '   </div>'
                     );
             }

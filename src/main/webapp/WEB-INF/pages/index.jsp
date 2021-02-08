@@ -29,19 +29,19 @@
                 
 			<div class="bodyWrapper">
 				<div class="form messageForm">
-				<div class="interlocuterName">${Interlocutor.getName()} ${Interlocutor.getAge()} y.o</div>
+				<div class="interlocuterName">${Interlocutor.getName()} ${Interlocutor.getAge()} лет</div>
 				<div class="messageBox">
 				<c:forEach items="${Messages}" var="message">
 					<div class="message">
 						<div class="messageAuthor">${message.getSenderLogin()}</div>
 						<div class="messageText">${message.getMessageText()}</div>
-						<div class="messageDate">12:02</div>
+						<div class="messageDate">${message.getSendTime()}</div>
 					</div>
 				</c:forEach>
 				</div>
 				<div class="answerForm">
-					<input type="text" autocomplete="off" name="answer" placeholder="your message" id="messageField" class="answerField" />
-					<button id="send" class="btn sendBtn">Send</button>
+					<input type="text" autocomplete="off" name="answer" placeholder="Ваше сообщение..." id="messageField" class="answerField" />
+					<button id="send" class="btn sendBtn">Отправить</button>
 				</div>
 				</div>
 			</div>
