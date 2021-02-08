@@ -22,7 +22,7 @@
 					<form:input type="text" path="age" autocomplete="off" name="age" placeholder="Возраст" class="field"/>
 					<form:input type="text" path="login" autocomplete="off" name="login" placeholder="Логин" class="field"/>
 					<form:input type="password" path="password"  name="password" placeholder="Пароль" class="field"/>
-					<button class="btn loginBtn">Enter</button>
+					<button class="btn loginBtn">Зарегистрироваться</button>
 					<div class="errorMessage">
 					    <span>${errorMessage}</span>
 					</div>
